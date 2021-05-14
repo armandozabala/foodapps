@@ -1,0 +1,18 @@
+<ion-menu [content]="content">
+    <ion-content>
+        <div class="menu-list">
+            <div class="menu-avatar">
+                <img src="assets/icon/logo2.png" alt="">
+                <span>Fill Your Tummy</span>                
+            </div>
+            <div class="menu-item" menuClose *ngFor="let p of pages" (click)="goToPage(p)">
+                <ion-icon name="{{ p.icon }}"></ion-icon>
+                {{ p.name }}
+            </div>
+        </div>
+    </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
